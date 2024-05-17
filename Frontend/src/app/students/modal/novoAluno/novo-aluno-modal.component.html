@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h4 class="modal-title">Novo Aluno</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="codAluno">Código Aluno</label>
+    <input type="text" class="form-control" id="codAluno" [(ngModel)]="newStudent.codAluno" required>
+  </div>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" [(ngModel)]="newStudent.nome" required>
+  </div>
+  <div class="form-group">
+    <label for="dNascimento">Data Nascimento</label>
+    <input type="date" class="form-control" id="dNascimento" [(ngModel)]="newStudent.dNascimento" required>
+  </div>
+  <div class="form-group">
+    <label for="cpf">CPF</label>
+    <input type="text" class="form-control" id="cpf" [(ngModel)]="newStudent.cpf" required>
+  </div>
+  <div class="form-group">
+    <label for="endereco">Endereço</label>
+    <input type="text" class="form-control" id="endereco" [(ngModel)]="newStudent.endereco" required>
+  </div>
+  <div class="form-group">
+    <label for="celular">Celular</label>
+    <input type="text" class="form-control" id="celular" [(ngModel)]="newStudent.celular" required>
+  </div>
+  <div class="form-group">
+    <label for="iCodeEscola">Código Escola</label>
+    <input type="text" class="form-control" id="iCodeEscola" [(ngModel)]="newStudent.iCodeEscola" required>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="dismiss()">Fechar</button>
+  <button type="button" class="btn btn-primary" (click)="save()">Salvar</button>
+</div>
