@@ -37,7 +37,7 @@ public class SchoolController : ControllerBase
         return Ok(_schoolService.AddSchools(newSchool));
     }
 
-    [HttpDelete]
+    [HttpDelete("{code}")]
     public ActionResult DeleteSchool(string code)
     {   School result = _schoolService.DeleteSchool(code);
         if(result == null){

@@ -11,6 +11,7 @@ import { Schoolsmodule } from './Schools/Schools.module';
 import { RouterModule } from '@angular/router';
 import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ApLoginpModule } from './student-login/app-login.module';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { FormsModule } from '@angular/forms';
     Schoolsmodule,
     HttpClientModule,
     NgbModule,
-    FormsModule
-
+    FormsModule,
+    ApLoginpModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

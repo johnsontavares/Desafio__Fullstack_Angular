@@ -10,9 +10,9 @@ namespace api.dto
     {
         
     [Required(AllowEmptyStrings = false)]
-    public string iCodEscola { get; set; }
+    public string codEscola { get; set; }
 
     [Required(AllowEmptyStrings = false)]
-    public string Descricao { get; set; }
+    public string descricao { get; set; }
     }
 }

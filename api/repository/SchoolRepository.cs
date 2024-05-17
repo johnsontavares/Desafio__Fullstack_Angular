@@ -10,8 +10,8 @@ namespace api.repository
     {
 
         private static List<School> _schools = new List<School>{
-            new School { iCodEscola = "code01", Descricao = "Escola 001"},
-            new School { iCodEscola = "code02", Descricao = "Escola 002"}
+            new School { codEscola = "code01", descricao = "Escola 001"},
+            new School { codEscola = "code02", descricao = "Escola 002"}
         };
 
     public List<School> GetAllSchools() => _schools;
@@ -22,7 +22,7 @@ namespace api.repository
     }
 
     public School DeleteSchool(string iCodEscola){
-        School schoolFinded = (_schools.First(school => school.iCodEscola == iCodEscola));
+        School schoolFinded = (_schools.First(school => school.codEscola == iCodEscola));
         _schools.Remove(schoolFinded);
 
         return schoolFinded;
@@ -30,7 +30,7 @@ namespace api.repository
 
         public School UpdateSchool(string code,  School updatedSchool)
         {
-            int SchoolIndex = _schools.FindIndex(x => x.iCodEscola == code);
+            int SchoolIndex = _schools.FindIndex(x => x.codEscola == code);
             if (SchoolIndex == -1)
             {
                 return null;

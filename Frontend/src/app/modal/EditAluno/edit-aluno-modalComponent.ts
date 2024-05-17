@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { StudentsService } from '../../students.service';
+import { StudentsService } from '../../students/students.service';
 import { Student } from 'src/app/models/student.model';
 import { DatePipe } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';

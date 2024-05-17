@@ -4,15 +4,15 @@ import { StudentsService } from './students.service';
 import { Student } from '../models/student.model';
 import { Observable } from 'rxjs';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { NovoAlunoModalComponent } from './modal/novoAluno/NovoAlunoModalComponent';
-import { EditAlunoModal } from './modal/EditAluno/edit-aluno-modalComponent';
+import { NovoAlunoModalComponent } from '../modal/novoAluno/NovoAlunoModalComponent';
+import { EditAlunoModal } from '../modal/EditAluno/edit-aluno-modalComponent';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
-  styleUrls: ['./students.component.css'],
+  styleUrls: ['./students.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StudentsComponent{
@@ -74,7 +74,7 @@ export class StudentsComponent{
   }
 
   DeleteStudent(code: string){
-    if (confirm('Are you sure you want to delete this student?')){
+    if (confirm('Você tem certeza?')){
       this.studentService.deleteStudent(code).subscribe((deletedStudent: Student) =>{
         console.log("deleted", deletedStudent)
       }
