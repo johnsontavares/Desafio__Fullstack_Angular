@@ -35,8 +35,7 @@ export class SchoolsComponent {
   openEdit(school: School): void {
     const modalRef = this.modalService.open(EditSchoolModalComponent);
     modalRef.componentInstance.school = school;
-    modalRef.componentInstance.getSchools = this.GetSchools.bind(this); // Binding para manter o contexto
-
+    modalRef.componentInstance.getSchools = this.GetSchools.bind(this);
     modalRef.result.then(
       (result) => {
         if (result === 'saved') {

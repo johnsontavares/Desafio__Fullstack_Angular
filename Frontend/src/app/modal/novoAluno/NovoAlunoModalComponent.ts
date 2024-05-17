@@ -15,20 +15,30 @@ import { School } from "src/app/models/schools.model";
 export class NovoAlunoModalComponent {
   @Input() student!: Student;
   @Input() getStudents!: () => void;
-  newStudent!: Student;
   isNew: boolean = false;
+
+  newStudent: Student = {
+    codAluno: '',
+    nome: '',
+    dNascimento: '',
+    cpf: '',
+    endereco: '',
+    celular: '',
+    iCodeEscola: ''
+  };
+
+  @Output() studentAdded = new EventEmitter<Student>();
 
   constructor(public activeModal: NgbActiveModal, private studentService: StudentsService) {}
 
-  ngOnInit() {
-    if (!this.student.iCodeEscola) {
-      this.isNew = true;
-    }
-  }
+  // ngOnInit() {
+  //   if (!this.student.iCodeEscola) {
+  //     this.isNew = true;
+  //   }
+  // }
 
   save(): void {
-    this.studentService.editStudent(this.student.codAluno, this.student).subscribe((student: Student) => {
-      this.getStudents();
+    this.studentService.addNewStudent(this.newStudent).subscribe((student: Student) => {
       this.activeModal.close('saved');
     });
   }

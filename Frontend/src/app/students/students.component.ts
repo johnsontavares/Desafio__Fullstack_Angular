@@ -33,7 +33,20 @@ export class StudentsComponent{
     const modalRef = this.modalService.open(NovoAlunoModalComponent);
     modalRef.componentInstance.studentAdded.subscribe((student: Student) => {
       this.onStudentAdded(student);
+    this.changeDetector.detectChanges();
     })
+    modalRef.result.then(
+      (result) => {
+        if (result === 'saved') {
+          this.GetStudents();
+        }
+      },
+      (reason) => {
+        console.log('Dismissed: ' + reason);
+      }
+
+    );
+    this.changeDetector.markForCheck();
   }
 
   onStudentAdded(student: Student): void {

@@ -1,27 +1,40 @@
-<div class="container">
-  <h2>Lista de Escolas</h2>
-  <button class="btn btn-primary mb-3" (click)="openEdit({ codEscola: '', descricao: '' })">Adicionar Nova Escola</button>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Código da Escola</th>
-        <th>Descrição</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let school of schools">
-        <td>{{ school.codEscola }}</td>
-        <td>{{ school.descricao }}</td>
-        <td>
-          <button class="btn btn-secondary" (click)="openEdit(school)">Editar</button>
-          <button type="button" class="btn btn-danger" (click)="DeleteSchool(school.codEscola)" >Excluir Aluno</button>
+<div class="container mt-5">
 
-        </td>
-      </tr>
-      <tr *ngIf="schools.length > 0">
-        <td colspan="8">Total Schools: {{ schools.length }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="d-flex flex-column justify-content-between">
+
+    <div class="d-flex flex-row justify-content-between ">
+      <div class="col">
+
+        <h2 class="text-center">Lista de Escolas</h2>
+      </div>
+
+      <button class="text-left btn btn-primary" (click)="openEdit({ codEscola: '', descricao: '' })">Adicionar Nova Escola</button>
+    </div>
+
+
+    <table class="table table-bordered  mt-4">
+      <thead>
+        <tr>
+          <th>Código da Escola</th>
+          <th>Descrição</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let school of schools">
+          <td>{{ school.codEscola }}</td>
+          <td>{{ school.descricao }}</td>
+          <td>
+            <button class="btn btn-secondary" (click)="openEdit(school)">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="DeleteSchool(school.codEscola)" >Excluir Aluno</button>
+
+          </td>
+        </tr>
+        <tr *ngIf="schools.length > 0">
+          <td colspan="8">Total Schools: {{ schools.length }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>

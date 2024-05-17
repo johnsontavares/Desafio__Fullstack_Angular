@@ -22,7 +22,7 @@ export class StudentLoginComponent {
     if (this.username === 'TESTE' && this.password === '123') {
       // Autenticação bem-sucedida
       // Redirecionar para a página desejada, por exemplo, a página inicial
-      this.router.navigate(['/Students']);
+      this.router.navigate(['/students']);
     } else {
       // Autenticação falhou
       alert('Nome de usuário ou senha incorretos.');
